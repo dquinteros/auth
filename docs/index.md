@@ -1,5 +1,7 @@
 # Multi-Tenant API Gateway Documentation Index
 
+Refer to [README.md](../README.md) for a quick project overview and basic setup instructions.
+
 ## Table of Contents
 
 ### 1. Project Overview & Architecture
