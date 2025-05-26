@@ -63,7 +63,7 @@ cd ..
 
 ### 3. Environment Configuration
 
-Create environment files for different environments:
+Create environment files for different environments using the provided `.env.example` template which lists required AWS variables (`AWS_REGION`, `AWS_COGNITO_USER_POOL_ID`, `AWS_COGNITO_CLIENT_ID`) and optional values like `PORT` and `MONGODB_URI`:
 
 ```bash
 # Create environment files
