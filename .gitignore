@@ -1,0 +1,10 @@
+.cursor/
+.editorconfig
+.git
+.idea
+.vscode
+.vscodeignore
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/README.md
