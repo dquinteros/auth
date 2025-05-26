@@ -195,6 +195,7 @@ docker-compose up -d
 # Or start services individually
 npm run dev:db      # Start MongoDB
 npm run dev:api     # Start API Gateway
+npm run dev         # Start example Fastify server
 npm run dev:admin   # Start Admin Panel
 ```
 
