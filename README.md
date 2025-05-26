@@ -11,6 +11,15 @@ This repository contains a Node.js based API Gateway designed for multi-tenant a
 npm install
 ```
 
+2. **Create your environment configuration**
+
+Copy `.env.example` to `.env` and update the values as needed. The template lists
+required AWS settings along with optional values such as `PORT` and `MONGODB_URI`.
+
+```bash
+cp .env.example .env
+```
+
 ## Development
 
 ```bash
