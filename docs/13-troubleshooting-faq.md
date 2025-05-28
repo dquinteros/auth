@@ -750,30 +750,10 @@ const userAttributes = [
 
 **AWS CLI setup**:
 
-```bash
-# Create user pool
-aws cognito-idp create-user-pool \
-  --pool-name "API Gateway Users" \
-  --schema '[
-    {
-      "Name": "tenantId",
-      "AttributeDataType": "String",
-      "Mutable": true,
-      "Required": false
-    },
-    {
-      "Name": "roles",
-      "AttributeDataType": "String",
-      "Mutable": true,
-      "Required": false
-    }
-  ]'
+Instead of running the commands manually, execute the setup script:
 
-# Create app client
-aws cognito-idp create-user-pool-client \
-  --user-pool-id us-east-1_XXXXXXXXX \
-  --client-name "API Gateway Client" \
-  --generate-secret
+```bash
+./aws/setup-cognito.sh
 ```
 
 #### Q: How do I set up MongoDB for multi-tenant data isolation?

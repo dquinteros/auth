@@ -129,12 +129,10 @@ docker ps
 
 #### Create Cognito User Pool
 
+Run the setup script to provision the user pool and app client:
+
 ```bash
-# Using AWS CLI (optional)
-aws cognito-idp create-user-pool \
-  --pool-name "api-gateway-users" \
-  --policies PasswordPolicy='{MinimumLength=8,RequireUppercase=true,RequireLowercase=true,RequireNumbers=true}' \
-  --auto-verified-attributes email
+./aws/setup-cognito.sh
 ```
 
 #### Manual Setup (AWS Console)

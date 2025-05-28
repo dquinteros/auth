@@ -8,45 +8,18 @@ AWS Cognito serves as our identity provider, handling user authentication and JW
 
 #### User Pool Setup
 
+Use the provided setup script to create the user pool.
+
 ```bash
-# Create User Pool via AWS CLI
-aws cognito-idp create-user-pool \
-  --pool-name "api-gateway-users" \
-  --policies '{
-    "PasswordPolicy": {
-      "MinimumLength": 8,
-      "RequireUppercase": true,
-      "RequireLowercase": true,
-      "RequireNumbers": true,
-      "RequireSymbols": false
-    }
-  }' \
-  --auto-verified-attributes email \
-  --username-attributes email \
-  --verification-message-template '{
-    "DefaultEmailOption": "CONFIRM_WITH_CODE",
-    "DefaultEmailSubject": "Your verification code",
-    "DefaultEmailMessage": "Your verification code is {####}"
-  }'
+./aws/setup-cognito.sh
 ```
 
 #### App Client Configuration
 
+The setup script also creates the application client for the user pool.
+
 ```bash
-# Create App Client
-aws cognito-idp create-user-pool-client \
-  --user-pool-id us-east-1_XXXXXXXXX \
-  --client-name "api-gateway-client" \
-  --generate-secret \
-  --explicit-auth-flows ADMIN_NO_SRP_AUTH ALLOW_USER_PASSWORD_AUTH ALLOW_REFRESH_TOKEN_AUTH \
-  --token-validity-units '{
-    "AccessToken": "hours",
-    "IdToken": "hours",
-    "RefreshToken": "days"
-  }' \
-  --access-token-validity 24 \
-  --id-token-validity 24 \
-  --refresh-token-validity 30
+./aws/setup-cognito.sh
 ```
 
 #### Custom Attributes for Multi-Tenancy

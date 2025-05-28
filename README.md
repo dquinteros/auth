@@ -20,6 +20,18 @@ required AWS settings along with optional values such as `PORT` and `MONGODB_URI
 cp .env.example .env
 ```
 
+3. **Configure AWS Cognito**
+
+Run the setup script to create the user pool and app client. You can override the
+region, pool name and client name with environment variables:
+
+```bash
+AWS_REGION=us-east-1 \
+COGNITO_USER_POOL_NAME=my-pool \
+COGNITO_APP_CLIENT_NAME=my-client \
+./aws/setup-cognito.sh
+```
+
 ## Development
 
 ```bash
